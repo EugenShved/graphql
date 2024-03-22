@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 # Disable warnings about unhandled errors
-Console.logger.disable(Async::Task)
+# Console.logger.disable(Async::Task)
 class AsyncGraphqlDemoSchema < GraphQL::Schema
   class TestError < StandardError
   end
 
   mutation(Types::MutationType)
   query(Types::QueryType)
-
   # use GraphQL::Dataloader
-  use GraphQL::Dataloader::AsyncDataloader
+  use GraphQL::Batch
+  # use GraphQL::Dataloader::AsyncDataloader
 
   # GraphQL-Ruby calls this when something goes wrong while running a query:
   def self.type_error(err, context)

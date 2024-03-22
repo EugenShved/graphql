@@ -73,6 +73,9 @@ end
 
 gem "async"
 gem "graphql", "~> 2.2"
+gem 'graphql-batch'
+
+
 # gem "graphql", path: "~/code/graphql-ruby"
 gem "graphiql-rails", group: :development
 
